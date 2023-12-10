@@ -1,22 +1,11 @@
-import {applyMiddleware, createStore} from "redux";
-import weatherReducer from "./redusers/weatherReduser";
-import thunk from "redux-thunk";
-import {logger} from "redux-logger";
-import { composeWithDevTools } from 'redux-devtools-extension';
+import {configureStore} from "@reduxjs/toolkit";
+import weatherInfo from './slice/weatherSlice';
 
-const initialState =
+
+const store = configureStore(
 	{
-		weather:	{
-			temperature: null,
-			city: null,
-			country: null,
-			pressure: null,
-			sunset: null,
-			message: 'Enter city name'
-		}
-
+		reducer:{ weatherInfo}
 	}
-
-const store = createStore(weatherReducer, initialState, composeWithDevTools(applyMiddleware(thunk, logger)));
+)
 
 export default store;

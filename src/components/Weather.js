@@ -4,19 +4,18 @@ import {useSelector} from "react-redux";
 const Weather = () =>
 
 {
-   const  weatherInfo= useSelector(state => state.weather);
-
+    const  weather= useSelector(state => state.weatherInfo.weather);
     return (
         <div className={'weatherInfo'} >
-            {!weatherInfo.message &&
+            {!weather.message &&
                 <div>
-                    <p>Location: {weatherInfo.country}, {weatherInfo.city}</p>
-                    <p>Temperature: {weatherInfo.temperature}<sup>o</sup>C</p>
-                    <p>Pressure: {weatherInfo.pressure}</p>
-                    <p>Sunset: {new Date(weatherInfo.sunset*1000).toTimeString()}</p>
+                    <p>Location: {weather.country}, {weather.city}</p>
+                    <p>Temperature: {weather.temperature}<sup>o</sup>C</p>
+                    <p>Pressure: {weather.pressure}</p>
+                    <p>Sunset: {new Date(weather.sunset*1000).toTimeString()}</p>
                 </div>
             }
-            <p>{weatherInfo.message}</p>
+            <p>{weather.message}</p>
         </div>
     )
 };

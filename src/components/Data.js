@@ -4,7 +4,6 @@ import Weather from "./Weather";
 
 const Data = ()=>
 
-
 {
     return (
         <div className={'result'}>

@@ -9,6 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: start;
+    overflow: scroll;
 
     background: rgba(45, 176, 224, 1);
     background: -moz-linear-gradient(45deg, rgba(45, 176, 224, 1) 0%, rgba(96, 40, 168, 1) 100%);
